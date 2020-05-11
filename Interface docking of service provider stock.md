@@ -2,7 +2,7 @@
 
 > ### The meaning of return code in the returned data（be in common use,every interface will return）
 
-| return code|   return msg      |               remarks               |
+| return code |   return msg      |               remarks               |
 | ------------- |----------------|-------------|
 |  0   |ok       | success
 | -1   |system error         | system Exception
