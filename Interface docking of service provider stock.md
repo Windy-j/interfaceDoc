@@ -1,8 +1,8 @@
 ## Explain
 
-> ### The meaning of return code in the returned data（be in common use,every interface will return）
+> ### The explanation of return code as below: ( In general, every interface will return)
 
-| return code |   return msg      |               remarks               |
+| return code |   return msg      |               Explanation               |
 | ------------- |----------------|-------------|
 |  0   |ok       | success
 | -1   |system error         | system Exception
@@ -10,7 +10,7 @@
 | -1 | ip invalid      | The access IP is illegal |
 | -1 | no permission  | permission denied |
 
-# 1、get acess token(you need to provide the acess ip to sekorm,it will Authorized by IP)
+# 1、Obtain an access token (need to provide the access interface IP to SEKORM,  we will authorize according to IP you provided)
 > 
 >access from： https://wwww.sekorm.com/serviceGate/getAccessToken  <br/>
 
@@ -21,14 +21,14 @@ get acess token
 
 > ### Request parameter description：
 
-| parameter        | data type           | Is required | The limited length | remarks | Example |
+| parameter        | data type           | Is required | The limited length | Explanation | Example values |
 | ----------  |-------------|-------------|-------------|-------------|-------------|
-| accessToken | String      | yes |  |The account assigned  by sekorm to the service provider developers | |
-| appSecret   | String      | yes |  |The password assigned  by sekorm to the service provider developers|  |
+| accessToken | String      | yes |  |SEKORM will assign accounts to the developers | |
+| appSecret   | String      | yes |  |SEKORM will assign password to the developers.|  |
 
 > ### Return result description：
 
-| parameter        | data type           | Is required | remarks | Example |
+| parameter        | data type           | Is required | Explanation | Example values |
 | ----------  |-------------|-------------|-------------|-------------|
 | code        | Integer | yes | return code | -1 |
 | msg         | String      | yes | decription of the return code | no permission |
@@ -36,7 +36,7 @@ get acess token
 
 > ### The meaning of return code in the returned data
 
-| return code|   return msg                  |               remarks               |
+| return code|   return msg                  |               Explanation               |
 | ------------- |----------------|-------------|
 |  0   |ok       | success
 | -1   |system error         | system Exception
@@ -68,9 +68,9 @@ get acess token
 * Please don't get accessToken frequently，it can be reused within the validity period
 
 ### remarks
-serviceGate  The project will check the visited IP address，If the visited IP is not authorized, it will not be accessible
+The serviceGate project will detect the IP address of the accessor, if the IP address is not added to the list, it will not be accessible
 
-# 2  Interface for batch sync stock（Mainly used for initial one-time）
+# 2  Batch stock synchronization interface (mainly used for one-time initialization)
 >  Full stock synchronization interface
 
 > access from： https://wwww.sekorm.com/serviceGate/pnarttnumber/pnStock <br/>
@@ -79,17 +79,17 @@ serviceGate  The project will check the visited IP address，If the visited IP i
 
 > Request parameter description：
 
-|     parameter      |   data type   | Is required | The limited length |          remarks           |                 Example              |
+|     parameter      |   data type   | Is required | The limited length |          Explanation           |                 Example values              |
 |-------------|--------|----|------|-----------------------|--------------------------------------------|
-| accessToken | String | yes  | 100  | certificate,Sekorm assigns to the service provider developers,The developer obtains by calling the interface | xSCMJVMkAYwMAZrIDF4l7tLA55YGZ0VDX7sp0FCfX4pY/af3DjQpD9cdYRczz3xzdqsDRjfoJlt2W9fH9guC2gA==                                             |
+| accessToken | String | yes  | 100  | The credential information，the developer can obtain  through the access interface assigned by SEKORM. | xSCMJVMkAYwMAZrIDF4l7tLA55YGZ0VDX7sp0FCfX4pY/af3DjQpD9cdYRczz3xzdqsDRjfoJlt2W9fH9guC2gA==                                             |
 | data        | String | yes  |      | Basic data (dictionary), json array        | [ {"pnCode": "ABCDE","brandName": "AMS","stockQuantity": 1000}] |
 
 >Description of object fields in data
 
-| field        | data type           | Is required | remarks|
+| field        | data type           | Is required | Explanation|
 | ----------  |-------------|-------------|-------------|
 | brandName        | String           | yes |Brand name，eg：AMS |
-| pnCode        | String           | yes| Material name |
+| pnCode        | String           | yes| Part No# |
 | stockQuantity        | integer           | yes| Quantity in stock：100 |
 
 When the code code is 0, it means successful return，
@@ -110,9 +110,9 @@ eg：
 
 > Request parameter description：
 
-|      parameter       |   data type    | Is required | The limited length |          remarks           |     Example        |
+|      parameter       |   data type    | Is required | The limited length |          Explanation           |     Example values        |
 |---------------|---------|----|------|-----------------------|-----------------------------------------------------|
-| accessToken   | String  | yes  | 100  | certificate,Sekorm assigns to the service provider developers,The developer obtains by calling the interface | xSCMJVMkAYwMAZrIDF4l7tLA55YGZ0VDX7sp0FCfX4pY/af3DjQpD9cdYRczz3xzdqsDRjfoJlt2W9fH9guC2gA== |
+| accessToken   | String  | yes  | 100  | The credential information，the developer can obtain  through the access interface assigned by SEKORM. | xSCMJVMkAYwMAZrIDF4l7tLA55YGZ0VDX7sp0FCfX4pY/af3DjQpD9cdYRczz3xzdqsDRjfoJlt2W9fH9guC2gA== |
 | pnCode        | String  | yes  | 50   | Material name                    | 1211LL的ON2                                                                                |
 | brandName     | String  | yes  | 50   | Brand name                    | AMS                                                                                       |
 | stockQuantity | Integer | yes  |      | Quantity in stock                  | 100     
@@ -132,17 +132,17 @@ eg：
 
 > Request parameter description：
 
-|     parameter      |   data type   | Is required | The limited length |          remarks           |                 Example              |
+|     parameter      |   data type   | Is required | The limited length |          Explanation           |                 Example values              |
 |-------------|--------|----|------|-----------------------|--------------------------------------------|
-| accessToken | String | yes  | 100  | certificate,Sekorm assigns to the service provider developers,The developer obtains by calling the interface | xSCMJVMkAYwMAZrIDF4l7tLA55YGZ0VDX7sp0FCfX4pY/af3DjQpD9cdYRczz3xzdqsDRjfoJlt2W9fH9guC2gA==                                             |
+| accessToken | String | yes  | 100  | The credential information，the developer can obtain  through the access interface assigned by SEKORM. | xSCMJVMkAYwMAZrIDF4l7tLA55YGZ0VDX7sp0FCfX4pY/af3DjQpD9cdYRczz3xzdqsDRjfoJlt2W9fH9guC2gA==                                             |
 | data        | String | yes  |      | Basic data (dictionary), json array        | [{"pnCode": "PNCODE1","brandName": "AMS","stockQuantity": 100}] |
 
 >Description of object fields in data
 
-| field        | data type           | Is required | remarks|
+| field        | data type           | Is required | Explanation|
 | ----------  |-------------|-------------|-------------|
 | brandName        | String           | yes |Brand name，eg：AMS |
-| pnCode        | String           | yes| Material name |
+| pnCode        | String           | yes|Part No# |
 | stockQuantity        | integer           | yes| Quantity in stock：100 |
 
 
