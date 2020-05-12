@@ -92,7 +92,7 @@ The serviceGate project will detect the IP address of the accessor, if the IP ad
 | pnCode        | String           | yes| Part No# |
 | stockQuantity        | integer           | yes| Quantity in stock：100 |
 
-When the code code is 0, it means successful return，
+When the code is 0, it means successful return，
 
 >  Example of successful return：
 
@@ -123,7 +123,7 @@ eg：
 eg：
 {"code":0,"msg":"OK","data":null}
 
-# 4 Interface for Inventory reconciliation
+# 4 Interface for stock reconciliation
 >  Reconciled once a day,Incoming all changed data of the day for comparison,If the data is incorrect, notify the person in charge to intervene
 
 > access from: https://wwww.sekorm.com/serviceGate/stock/compare <br/>
